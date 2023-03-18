@@ -13,7 +13,7 @@ import javax.validation.constraints.Size;
 import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
-@Table(name ="tb_postagem")
+@Table(name ="tb_postagens")
 public class Postagem {
 
 	@Id
