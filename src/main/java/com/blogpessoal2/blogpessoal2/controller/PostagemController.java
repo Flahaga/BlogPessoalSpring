@@ -4,7 +4,7 @@ package com.blogpessoal2.blogpessoal2.controller;
 import java.util.List;
 import java.util.Optional;
 
-import javax.validation.Valid;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
@@ -25,6 +25,8 @@ import org.springframework.web.server.ResponseStatusException;
 import com.blogpessoal2.blogpessoal2.model.Postagem;
 import com.blogpessoal2.blogpessoal2.repository.PostagemRepository;
 import com.blogpessoal2.blogpessoal2.repository.TemaRepository;
+
+import jakarta.validation.Valid;
 
 
 

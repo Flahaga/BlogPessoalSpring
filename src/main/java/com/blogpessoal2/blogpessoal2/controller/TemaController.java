@@ -3,7 +3,7 @@ package com.blogpessoal2.blogpessoal2.controller;
 import java.util.List;
 import java.util.Optional;
 
-import javax.validation.Valid;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,6 +22,8 @@ import org.springframework.web.server.ResponseStatusException;
 
 import com.blogpessoal2.blogpessoal2.model.Tema;
 import com.blogpessoal2.blogpessoal2.repository.TemaRepository;
+
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/temas")
