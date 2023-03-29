@@ -1,5 +1,8 @@
 package com.blogpessoal2.blogpessoal2.repository;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -10,18 +13,19 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 
 import com.blogpessoal2.blogpessoal2.model.Usuario;
 
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
-@TestInstance(TestInstance.LifeCycle.PER_CLASS)
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class UsuarioRepositoryTest {
 
 	@Autowired
 	private UsuarioRepository usuarioRepository;
 	
 	@BeforeAll
-	void start (){
+	void start(){
 
 		usuarioRepository. deleteAll();
 
@@ -40,7 +44,6 @@ public class UsuarioRepositoryTest {
 	public void deveRetornarUmUsuario() {
 
 		Optional<Usuario> usuario = usuarioRepository.findByUsuario("joao@email.com.br");
-
 		assertTrue(usuario.get().getUsuario().equals("joao@email.com.br"));
 	}
 
@@ -48,7 +51,7 @@ public class UsuarioRepositoryTest {
 	@DisplayName("Retorna 3 usuarios")
 	public void deveRetornarTresUsuarios() {
 
-		List<Usuario> listaDeUsuarios = usuarioRepository. findAllByNomeContainingIgnoreCase("Silva");
+		List<Usuario> listaDeUsuarios = usuarioRepository.findAllByNomeContainingIgnoreCase("Silva");
 
 		assertEquals(3, listaDeUsuarios.size());
 		
