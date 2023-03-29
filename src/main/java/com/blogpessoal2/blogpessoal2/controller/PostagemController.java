@@ -1,13 +1,9 @@
 package com.blogpessoal2.blogpessoal2.controller;
 
-
 import java.util.List;
 import java.util.Optional;
 
-
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -27,9 +23,6 @@ import com.blogpessoal2.blogpessoal2.repository.PostagemRepository;
 import com.blogpessoal2.blogpessoal2.repository.TemaRepository;
 
 import jakarta.validation.Valid;
-
-
-
 
 @RestController
 @RequestMapping("/postagens")
@@ -84,7 +77,7 @@ public class PostagemController {
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	@DeleteMapping("/{id}")
 	public void delete(@PathVariable Long id) {
-		Optional <Postagem> postagem = postagemRepository.findById(id);
+	Optional<Postagem> postagem = postagemRepository.findById(id);
 		
 		if(postagem.isEmpty())
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND);
