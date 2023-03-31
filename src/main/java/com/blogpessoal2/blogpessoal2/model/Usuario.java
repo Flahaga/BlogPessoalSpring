@@ -6,6 +6,7 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -28,6 +29,7 @@ public class Usuario {
 	@Size ( min = 10 ,max =255 )
 	private String nome;
 	
+	@Schema(example = "email@email.com.br")
 	@NotBlank(message = "O usuário é obrigatório")
 	@Size(min =10, max = 255 )
 	private String usuario;

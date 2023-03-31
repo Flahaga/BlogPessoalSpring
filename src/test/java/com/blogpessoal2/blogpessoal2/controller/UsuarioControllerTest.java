@@ -40,7 +40,7 @@ public class UsuarioControllerTest {
 		usuarioRepository.deleteAll();
 
 		usuarioService.cadastrarUsuario(new Usuario(0L, 
-			"Rootgeneration", "root@root.com", "rootroot45", " "));
+			"Rootgeneration", "root@root.com.br", "rootroot45", " "));
 
 	}
 
@@ -89,7 +89,7 @@ public class UsuarioControllerTest {
 	HttpEntity<Usuario> corpoRequisicao = new HttpEntity<Usuario>(usuarioUpdate);
 
 		ResponseEntity<Usuario> corpoResposta = testRestTemplate
-			.withBasicAuth("root@root.com", "rootroot45")
+			.withBasicAuth("root@root.com.br", "rootroot45")
 			.exchange("/usuarios/atualizar", HttpMethod.PUT, corpoRequisicao, Usuario.class);
 
 		assertEquals(HttpStatus.OK, corpoResposta.getStatusCode());
@@ -108,7 +108,7 @@ public class UsuarioControllerTest {
 			"Ricardo Marques", "ricardo_marques@email.com.br", "ricardo123", "https://i.imgur.com/Sk5SjWE.jpg"));
 
 		ResponseEntity<String> resposta = testRestTemplate
-		.withBasicAuth("root@root.com", "rootroot45")
+		.withBasicAuth("root@root.com.br", "rootroot45")
 			.exchange("/usuarios/all", HttpMethod.GET, null, String.class);
 
 		assertEquals(HttpStatus.OK, resposta.getStatusCode());
